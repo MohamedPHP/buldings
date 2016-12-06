@@ -11,8 +11,21 @@
 |
 */
 
+// Admin Routes
+Route::group(['middleware' => 'admin'], function () {
+    Route::group(['prefix' => 'admin'], function () {
+        Route::get('home', [
+            'uses' => 'AdminController@index',
+            'as'   => 'admin.home'
+        ]);
+    });
+});
+
+
+// User Routes
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.welcome');
 });
 
 Route::auth();
