@@ -20,17 +20,23 @@
                 <a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                 <ul class="treeview-menu">
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a>
-                    </li>
-                    <li>
-                        <a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a>
+                        <a href="{{ url('/admin/home') }}"><i class="fa fa-circle-o"></i> Dashboard v1</a>
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="#"><i class="fa fa-th"></i> <span>Widgets</span></a>
+            <li class="header">Users</li>
+            <li class="{{ $pagename == 'users' ? 'active' : '' }} treeview">
+                <a href="#"><i class="fa fa-dashboard"></i> <span>Users</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li class="active">
+                        <a href="{{ url('/admin/users') }}"><i class="fa fa-circle-o"></i> Index</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.users.create') }}"><i class="fa fa-circle-o"></i> Add</a>
+                    </li>
+                    </li>
+                </ul>
             </li>
-            <li class="header">LABELS</li>
         </ul>
     </section><!-- /.sidebar -->
 </aside><!-- Content Wrapper. Contains page content -->

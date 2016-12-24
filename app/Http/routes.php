@@ -18,6 +18,10 @@ Route::group(['middleware' => 'admin'], function () {
             'uses' => 'AdminController@index',
             'as'   => 'admin.home'
         ]);
+        # Start Users
+        Route::get('users/data', 'UsersController@dataTableUsers')->name('UsersData');
+        Route::resource('users', 'UsersController');
+        # End Users
     });
 });
 

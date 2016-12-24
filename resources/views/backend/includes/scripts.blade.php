@@ -3,7 +3,7 @@
 <script>$.widget.bridge('uibutton', $.ui.button);</script> <!-- Bootstrap 3.3.6 -->
 {!! Html::script('backend/bootstrap/js/bootstrap.min.js') !!}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-{!! Html::script('backend/plugins/morris/morris.min.js') !!}
+{{-- {!! Html::script('backend/plugins/morris/morris.min.js') !!} --}}
 {!! Html::script('backend/plugins/sparkline/jquery.sparkline.min.js') !!}
 {!! Html::script('backend/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') !!}
 {!! Html::script('backend/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') !!}
