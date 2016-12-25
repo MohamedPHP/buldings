@@ -22,6 +22,9 @@ Route::group(['middleware' => 'admin'], function () {
         Route::get('users/data', 'UsersController@dataTableUsers')->name('UsersData');
         Route::resource('users', 'UsersController');
         # End Users
+        # Start SiteSetting
+        Route::get('SiteSetting', 'SiteSettingController@index');
+        # End SiteSetting
     });
 });
 
