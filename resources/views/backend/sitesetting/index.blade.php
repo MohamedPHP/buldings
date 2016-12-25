@@ -2,7 +2,7 @@
 
 @section('pagename')
 <?php
-    $pagename = 'SiteSetting';
+    $pagename = 'Settings';
 ?>
 @endsection
 
@@ -35,27 +35,29 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        @foreach ($siteSetting as $s)
-                            <form>
-                                <div class="col-md-3">
-                                    {{ $s->slug }}
-                                </div>
-                                <div class="col-md-9">
-                                        <fieldset class="form-group">
-                                            @if ($condition)
-                                                <input type="text" class="form-control" name="{{ $s->namesetting }}" value="{{ $s->value }}" placeholder="setting name">
-                                            @else
-                                                <textarea name="{{ $s->namesetting }}" rows="8" cols="80">{{ $s->value }}</textarea>
-                                            @endif
-                                            @if ($errors->has($s->namesetting))
-                                                <span class="help-block">
-                                                    <strong>{{ $errors->first($s->namesetting) }}</strong>
-                                                </span>
-                                            @endif
-                                        </fieldset>
-                                </div>
-                            </form>
-                        @endforeach
+                        <form action="{{ url('admin/SiteSetting') }}" method="post">
+                            {{ csrf_field() }}
+                            @foreach ($siteSetting as $s)
+                                    <div class="col-md-3">
+                                        {{ $s->slug }}
+                                    </div>
+                                    <div class="col-md-9">
+                                            <fieldset class="form-group">
+                                                @if ($s->type == 0)
+                                                    <input type="text" class="form-control" name="{{ $s->namesetting }}" value="{{ $s->value }}" placeholder="setting name">
+                                                @else
+                                                    <textarea name="{{ $s->namesetting }}" rows="8" cols="80">{{ $s->value }}</textarea>
+                                                @endif
+                                                @if ($errors->has($s->namesetting))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first($s->namesetting) }}</strong>
+                                                    </span>
+                                                @endif
+                                            </fieldset>
+                                    </div>
+                            @endforeach
+                            <button type="submit" class="btn btn-primary">Update Settings</button>
+                        </form>
                     </div>
                     <!-- /.box-body -->
                 </div>

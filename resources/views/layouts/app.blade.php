@@ -3,7 +3,7 @@
 <head>
 
 
-    <title>Laravel</title>
+    <title>{{ getString() }}</title>
 
     {!! Html::style('frontend/css/bootstrap.min.css') !!}
     {!! Html::style('frontend/css/flexslider.css') !!}

@@ -24,6 +24,7 @@ Route::group(['middleware' => 'admin'], function () {
         # End Users
         # Start SiteSetting
         Route::get('SiteSetting', 'SiteSettingController@index');
+        Route::post('SiteSetting', 'SiteSettingController@store');
         # End SiteSetting
     });
 });

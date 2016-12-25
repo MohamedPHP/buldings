@@ -2,7 +2,7 @@
 
 @section('pagename')
 <?php
-    $pagename = 'home';
+    $pagename = 'Home';
 ?>
 @endsection
 
@@ -12,6 +12,7 @@
 
 @section('content')
 test
+{{ getString() }}
 @endsection
 
 

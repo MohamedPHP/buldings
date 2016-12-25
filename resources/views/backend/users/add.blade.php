@@ -2,7 +2,7 @@
 
 @section('pagename')
 <?php
-    $pagename = 'users';
+    $pagename = 'Add-Users';
 ?>
 @endsection
 

@@ -14,4 +14,15 @@ class SiteSettingController extends Controller
         $siteSetting = $siteSetting->all();
         return view('backend.sitesetting..index', compact('siteSetting'));
     }
+
+
+    public function store(Request $request, SiteSetting $siteSetting)
+    {
+        foreach (array_except($request->toArray(), ['_token']) as $req => $r) {
+            $siteSettingUpdate = $siteSetting->where('namesetting', $req)->first();
+            $siteSettingUpdate->value = $r;
+            $siteSettingUpdate->save();
+        }
+        return redirect()->back()->with(['message' => 'Site Settings Updated Successfully']);
+    }
 }

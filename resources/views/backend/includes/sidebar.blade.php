@@ -16,24 +16,28 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="{{ $pagename == 'home' ? 'active' : '' }} treeview">
+            <li class="{{ $pagename == 'Home' || $pagename == 'Settings' ? 'active' : '' }} treeview">
                 <a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                <ul class="treeview-menu">
-                    <li class="active">
-                        <a href="{{ url('/admin/home') }}"><i class="fa fa-circle-o"></i> Dashboard v1</a>
+                <ul class="treeview-menu {{ $pagename == 'Home' ? 'active' : '' }}">
+                    <li class="{{ $pagename == 'Home' ? 'active' : '' }}">
+                        <a href="{{ url('/admin/home') }}"><i class="fa fa-circle-o"></i> Home</a>
+                    </li>
+                </ul>
+                <ul class="treeview-menu {{ $pagename == 'Settings' ? 'active' : '' }}">
+                    <li class="{{ $pagename == 'Settings' ? 'active' : '' }}">
+                        <a href="{{ url('/admin/SiteSetting') }}"><i class="fa fa-circle-o"></i> Settings</a>
                     </li>
                 </ul>
             </li>
             <li class="header">Users</li>
-            <li class="{{ $pagename == 'users' ? 'active' : '' }} treeview">
+            <li class="{{ $pagename == 'users' || $pagename == 'Add-Users' ? 'active' : '' }} treeview">
                 <a href="#"><i class="fa fa-dashboard"></i> <span>Users</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                 <ul class="treeview-menu">
-                    <li class="active">
+                    <li class="{{ $pagename == 'users' ? 'active' : '' }}">
                         <a href="{{ url('/admin/users') }}"><i class="fa fa-circle-o"></i> Index</a>
                     </li>
-                    <li>
+                    <li class="{{ $pagename == 'Add-Users' ? 'active' : '' }}">
                         <a href="{{ route('admin.users.create') }}"><i class="fa fa-circle-o"></i> Add</a>
-                    </li>
                     </li>
                 </ul>
             </li>
