@@ -335,6 +335,7 @@ class ComposerStaticInitc1c6939e54962d59119750ad31823422
 
     public static $classMap = array (
         'Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
+        'CreateBuldingsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_26_231200_create_buldings_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateSiteSettingTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_25_132454_create_siteSetting_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',

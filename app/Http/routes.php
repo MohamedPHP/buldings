@@ -14,18 +14,28 @@
 // Admin Routes
 Route::group(['middleware' => 'admin'], function () {
     Route::group(['prefix' => 'admin'], function () {
-        Route::get('home', [
-            'uses' => 'AdminController@index',
-            'as'   => 'admin.home'
-        ]);
+
+        Route::get('home', ['uses' => 'AdminController@index','as' => 'admin.home']); // Home Page Of Admin Dashboard
+
         # Start Users
         Route::get('users/data', 'UsersController@dataTableUsers')->name('UsersData');
         Route::resource('users', 'UsersController');
         # End Users
+
+
         # Start SiteSetting
         Route::get('SiteSetting', 'SiteSettingController@index');
         Route::post('SiteSetting', 'SiteSettingController@store');
         # End SiteSetting
+
+
+
+        # Start buldings
+        Route::get('buldings', 'BuldingsController@index')->name('admin.buldings.index');
+        Route::get('buldings', 'BuldingsController@dataTableBuldings')->name('admin.buldings.data');
+        # End buldings
+
+
     });
 });
 

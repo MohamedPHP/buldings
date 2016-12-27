@@ -8,8 +8,7 @@
 
 
 @section('styles')
-    <!-- DataTables -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/datatables/dataTables.bootstrap.css')}}">
+
 @endsection
 
 @section('content')

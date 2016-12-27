@@ -41,6 +41,22 @@
                     </li>
                 </ul>
             </li>
+
+
+            <li class="header">Buldings</li>
+            <li class="{{ $pagename == 'Buldings' || $pagename == 'Add-Buldings' ? 'active' : '' }} treeview">
+                <a href="#"><i class="fa fa-dashboard"></i> <span>Users</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li class="{{ $pagename == 'Buldings' ? 'active' : '' }}">
+                        <a href="{{ route('admin.buldings.index') }}"><i class="fa fa-circle-o"></i> Buldings Index</a>
+                    </li>
+                    <li class="{{ $pagename == 'Add-Buldings' ? 'active' : '' }}">
+                        <a href="#"><i class="fa fa-circle-o"></i> Add Buldings</a>
+                    </li>
+                </ul>
+            </li>
+
+
         </ul>
     </section><!-- /.sidebar -->
 </aside><!-- Content Wrapper. Contains page content -->
