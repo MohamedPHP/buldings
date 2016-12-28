@@ -13,9 +13,11 @@ class CreateBuldingsTable extends Migration
     public function up()
     {
         Schema::create('buldings', function (Blueprint $table) {
+            DB::statement('SET FOREIGN_KEY_CHECKS=0');
             $table->increments('id');
             $table->string('name');
             $table->string('price');
+            $table->string('rooms');
             $table->integer('rent');
             $table->string('square');
             $table->integer('type');
@@ -39,6 +41,7 @@ class CreateBuldingsTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         Schema::drop('buldings');
     }
 }

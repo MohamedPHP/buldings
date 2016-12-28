@@ -550,6 +550,7 @@ return array(
     'SebastianBergmann\\RecursionContext\\Exception' => $vendorDir . '/sebastian/recursion-context/src/Exception.php',
     'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => $vendorDir . '/sebastian/recursion-context/src/InvalidArgumentException.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
+    'SiteSettingTableSeeder' => $baseDir . '/database/seeds/SiteSettingTableSeeder.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
 );

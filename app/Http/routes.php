@@ -31,8 +31,10 @@ Route::group(['middleware' => 'admin'], function () {
 
 
         # Start buldings
-        Route::get('buldings', 'BuldingsController@index')->name('admin.buldings.index');
-        Route::get('buldings', 'BuldingsController@dataTableBuldings')->name('admin.buldings.data');
+        Route::get('buldings', [ 'uses' => 'BuldingsController@index', 'as' => 'admin.buldings.index']);
+        Route::get('buldings/create', [ 'uses' => 'BuldingsController@create', 'as' => 'admin.buldings.create']);
+        Route::post('buldings/store', [ 'uses' => 'BuldingsController@store', 'as' => 'admin.buldings.store']);
+        Route::get('buldings/data', ['uses' => 'BuldingsController@dataTableBuldings', 'as' => 'admin.buldings.data']);
         # End buldings
 
 

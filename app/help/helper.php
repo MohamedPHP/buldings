@@ -8,12 +8,20 @@ function getString($sitename = 'sitename')
 }
 
 
-public function bulding_type()
+function bulding_type()
 {
     $array = [
-        'villa'
-        'apartment'
-        'beachHome'
+        'villa',
+        'apartment',
+        'beachHome',
+    ];
+    return $array;
+}
+function bulding_status()
+{
+    $array = [
+        'Deactivated',
+        'Activated',
     ];
     return $array;
 }

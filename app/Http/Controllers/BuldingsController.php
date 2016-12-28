@@ -15,6 +15,16 @@ class BuldingsController extends Controller
         return view('backend.buldings.index');
     }
 
+    public function create()
+    {
+        return view('backend.buldings.add');
+    }
+
+    public function store(BuldingsRequest $request)
+    {
+
+    }
+
 
 
     public function dataTableBuldings(Bulding $bulding)

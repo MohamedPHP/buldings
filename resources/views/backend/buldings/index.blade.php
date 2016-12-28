@@ -39,7 +39,7 @@
                         --}}
 
                         <table id="data" class="table table-bordered table-responsive table-striped">
-                            <thead style="background-color: #444">
+                            <thead>
                                 <tr>
                                     <th class="text-center">id</th>
                                     <th class="text-center">name</th>

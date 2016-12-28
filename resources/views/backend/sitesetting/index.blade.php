@@ -45,7 +45,7 @@
                                                 @if ($s->type == 0)
                                                     <input type="text" class="form-control" name="{{ $s->namesetting }}" value="{{ $s->value }}" placeholder="setting name">
                                                 @else
-                                                    <textarea name="{{ $s->namesetting }}" rows="8" cols="80">{{ $s->value }}</textarea>
+                                                    <textarea name="{{ $s->namesetting }}" class="form-control" rows="8" cols="80">{{ $s->value }}</textarea>
                                                 @endif
                                                 @if ($errors->has($s->namesetting))
                                                     <span class="help-block">
