@@ -16,7 +16,7 @@ class CreateBuldingsTable extends Migration
             DB::statement('SET FOREIGN_KEY_CHECKS=0');
             $table->increments('id');
             $table->string('name');
-            $table->string('price');
+            $table->decimal('price');
             $table->string('rooms');
             $table->integer('rent');
             $table->string('square');
@@ -27,6 +27,8 @@ class CreateBuldingsTable extends Migration
             $table->string('latitude');
             $table->text('larg_dis');
             $table->integer('status');
+            $table->integer('place_id')->unsigned();
+            $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

@@ -17,3 +17,4 @@
 {!! Html::script('backend/dist/js/app.min.js') !!}
 {!! Html::script('backend/dist/js/pages/dashboard.js') !!}
 {!! Html::script('backend/dist/js/demo.js') !!}
+{!! Html::script('backend/plugins/sweetalert.min.js') !!}

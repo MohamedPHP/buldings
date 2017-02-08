@@ -12,5 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(SiteSettingTableSeeder::class);
+        $this->call(PlacesTableSeeder::class);
+        $this->call(BuldingsTableSeeder::class);
     }
 }

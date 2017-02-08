@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+
 use App\Http\Requests\Request;
 
 class BuldingsRequest extends Request
@@ -24,7 +25,18 @@ class BuldingsRequest extends Request
     public function rules()
     {
         return [
-            #............
+            'name' => 'required|min:6|max:100',
+            'price' => 'required',
+            'rooms' => 'required|integer',
+            'rent' => 'required|integer',
+            'square' => 'required|numeric',
+            'type' => 'required|integer',
+            'small_dis' => 'required|min:70|max:160',
+            'meta' => 'required',
+            'langtude' => 'required',
+            'latitude' => 'required',
+            'larg_dis' => 'required|min:6',
+            'status' => 'required|numeric',
         ];
     }
 }

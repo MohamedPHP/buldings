@@ -17,6 +17,7 @@
         {!! Html::style('backend/plugins/datepicker/datepicker3.css') !!}
         {!! Html::style('backend/plugins/daterangepicker/daterangepicker.css') !!}
         {!! Html::style('backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') !!}
+        {!! Html::style('backend/plugins/sweetalert.css') !!}
 
         @yield('pagename')
 

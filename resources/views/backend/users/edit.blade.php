@@ -81,5 +81,14 @@
 
 
 @section('scripts')
-
+    @if (Session::has('message'))
+        <script type="text/javascript">
+        swal({
+            title: "Success!",
+            text: "{{ Session::get('message') }}",
+            timer: 2000,
+            showConfirmButton: false
+        });
+        </script>
+    @endif
 @endsection

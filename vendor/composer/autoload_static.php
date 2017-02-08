@@ -334,9 +334,11 @@ class ComposerStaticInitc1c6939e54962d59119750ad31823422
     );
 
     public static $classMap = array (
+        'BuldingsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/BuldingsTableSeeder.php',
         'Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
         'CreateBuldingsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_26_231200_create_buldings_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePlacesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_191258_create_places_table.php',
         'CreateSiteSettingTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_25_132454_create_siteSetting_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
@@ -842,6 +844,7 @@ class ComposerStaticInitc1c6939e54962d59119750ad31823422
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PlacesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PlacesTableSeeder.php',
         'SebastianBergmann\\Comparator\\ArrayComparator' => __DIR__ . '/..' . '/sebastian/comparator/src/ArrayComparator.php',
         'SebastianBergmann\\Comparator\\Comparator' => __DIR__ . '/..' . '/sebastian/comparator/src/Comparator.php',
         'SebastianBergmann\\Comparator\\ComparisonFailure' => __DIR__ . '/..' . '/sebastian/comparator/src/ComparisonFailure.php',

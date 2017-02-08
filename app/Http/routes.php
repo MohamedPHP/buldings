@@ -34,7 +34,9 @@ Route::group(['middleware' => 'admin'], function () {
         Route::get('buldings', [ 'uses' => 'BuldingsController@index', 'as' => 'admin.buldings.index']);
         Route::get('buldings/create', [ 'uses' => 'BuldingsController@create', 'as' => 'admin.buldings.create']);
         Route::post('buldings/store', [ 'uses' => 'BuldingsController@store', 'as' => 'admin.buldings.store']);
-        Route::get('buldings/data', ['uses' => 'BuldingsController@dataTableBuldings', 'as' => 'admin.buldings.data']);
+        Route::get('buldings/edit/{id}', [ 'uses' => 'BuldingsController@edit', 'as' => 'admin.buldings.edit']);
+        Route::post('buldings/update/{id}', [ 'uses' => 'BuldingsController@update', 'as' => 'admin.buldings.update']);
+        Route::get('buldings/delete/{id}', [ 'uses' => 'BuldingsController@delete', 'as' => 'admin.buldings.delete']);
         # End buldings
 
 
@@ -51,3 +53,10 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/buldings', 'BuldingsController@showAllEnabled');
+Route::get('/buldings/egar', 'BuldingsController@showAllEgar');
+Route::get('/buldings/tamleek', 'BuldingsController@showAllTamleek');
+Route::get('/buldings/type/villas', 'BuldingsController@showVillas');
+Route::get('/buldings/type/apartments', 'BuldingsController@showApartments');
+Route::get('/buldings/type/beachHomes', 'BuldingsController@showBeatchHomes');
+Route::get('/buldings/search', 'BuldingsController@search')->name('bulding.search');
