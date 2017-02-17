@@ -10,12 +10,12 @@
                         <br>
                         <div class="productprice">
                             <div class="pull-right">
-                                <a href="#" class="btn btn-link">
+                                <a href="{{ route('bulding.single', ['id' => $bulding->id]) }}" class="btn btn-link">
                                     Details
                                 </a>
                             </div>
                             <div class="pricetext">
-                                {{$bulding->price}} $
+                                ${{$bulding->price}}
                             </div>
                         </div>
                     </div>
@@ -23,9 +23,6 @@
             @endforeach
         </div>
     @endforeach
-    <div class="text-center">
-        {{ $buldings->appends(Request::except('page'))->render() }}
-    </div>
 @else
     <div class="row">
         <div class="alert alert-warning">There Is No Buldings Right Now Please Wait Till Admin Add Some.</div>

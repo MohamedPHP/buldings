@@ -556,4 +556,5 @@ return array(
     'SiteSettingTableSeeder' => $baseDir . '/database/seeds/SiteSettingTableSeeder.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UsersTableSeeder' => $baseDir . '/database/seeds/UsersTableSeeder.php',
 );

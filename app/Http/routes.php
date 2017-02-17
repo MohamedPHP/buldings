@@ -60,3 +60,4 @@ Route::get('/buldings/type/villas', 'BuldingsController@showVillas');
 Route::get('/buldings/type/apartments', 'BuldingsController@showApartments');
 Route::get('/buldings/type/beachHomes', 'BuldingsController@showBeatchHomes');
 Route::get('/buldings/search', 'BuldingsController@search')->name('bulding.search');
+Route::get('/buldings/single/{id}', 'BuldingsController@single')->name('bulding.single');

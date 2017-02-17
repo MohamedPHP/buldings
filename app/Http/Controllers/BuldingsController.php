@@ -150,4 +150,13 @@ class BuldingsController extends Controller
         $buldings = $query->paginate(9);
         return view('frontend.all', compact('buldings', 'breadcrumb'));
     }
+
+    public function single($id)
+    {
+        $bulding = Bulding::findOrFail($id);
+        $same_rent = Bulding::where('rent', $bulding->rent)->orderBy(DB::raw('RAND()'))->take(3)->get();
+        $same_type = Bulding::where('type', $bulding->type)->orderBy(DB::raw('RAND()'))->take(3)->get();
+        return view('frontend.single', compact('bulding', 'same_rent', 'same_type'));
+    }
+
 }

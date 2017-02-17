@@ -24,8 +24,31 @@
                 <div class="menu"> <a class="toggleMenu" href="#"><img src="{{asset('frontend/images/nav_icon.png')}}" alt="" /> </a>
                     <ul class="nav" id="nav">
                         <li class="current"><a href="{{ url('/home') }}">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="{{ url('/buldings') }}">Buldings</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Egar <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                @foreach (bulding_type() as $key => $value)
+                                    <li><a href="{{ url('/buldings/search?rent=0&type=' . $key) }}">{{$value}}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Tamleek <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                @foreach (bulding_type() as $key => $value)
+                                    <li><a href="{{ url('/buldings/search?rent=1&type=' . $key) }}">{{$value}}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+
+                        <li><a href="{{ url('/buldings') }}">All Buldings</a></li>
                         <li><a href="#">Contact Us</a></li>
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>

@@ -5,9 +5,52 @@
     <div class="banner text-center">
     	<div class="container">
     		<div class="banner-info">
-    			<h1>Lorem ipsum dolor sit amet</h1>
-    			<p>Lorem ipsum dolor sit amet, facilisis egestas sodales non luctus,<br>
-    			sem quas potenti malesuada vel phasellus.</p><a class="banner_btn" href="about.html">Read More</a>
+    			<h1>Welcome To {{ getString() }}</h1>
+                <hr>
+                <div class="row">
+                    {!! Form::open(['route' => 'bulding.search', 'method' => 'get']) !!}
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            {!! Form::text('price_from', null, ['class' => 'form-control', 'placeholder' => 'price_from']) !!}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            {!! Form::text('price_to', null, ['class' => 'form-control', 'placeholder' => 'price_to']) !!}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            {!! Form::select('rooms', roomnumber(), null, ['class' => 'form-control', 'placeholder' => 'bulding rooms']) !!}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            {!! Form::select('type', bulding_type(), null, ['class' => 'form-control', 'placeholder' => 'bulding type']) !!}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            {!! Form::select('rent', bulding_rent(), null, ['class' => 'form-control', 'placeholder' => 'bulding rent']) !!}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            {!! Form::select('place_id', places(), null, ['class' => 'form-control', 'placeholder' => 'bulding Place']) !!}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            {!! Form::text('square', null, ['class' => 'form-control', 'placeholder' => 'bulding square']) !!}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            {!! Form::submit('Search', ['class' => 'btn btn-success btn-block']) !!}
+                        </div>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
     		</div>
     	</div>
     </div>
