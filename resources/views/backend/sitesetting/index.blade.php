@@ -34,7 +34,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <form action="{{ url('admin/SiteSetting') }}" method="post">
+                        <form action="{{ url('admin/SiteSetting') }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             @foreach ($siteSetting as $s)
                                     <div class="col-md-3">
@@ -44,8 +44,17 @@
                                             <fieldset class="form-group">
                                                 @if ($s->type == 0)
                                                     <input type="text" class="form-control" name="{{ $s->namesetting }}" value="{{ $s->value }}" placeholder="setting name">
-                                                @else
+                                                @elseif ($s->type == 1)
                                                     <textarea name="{{ $s->namesetting }}" class="form-control" rows="8" cols="80">{{ $s->value }}</textarea>
+                                                @elseif ($s->type == 2)
+                                                    @if (empty($s->value))
+                                                        <h4>There Is No Image Yet</h4>
+                                                    @else
+                                                        <div style="width:150px;height150px;">
+                                                            <img src="{{ asset($s->value) }}" class="img-responsive img-thumbnail" alt="Image">
+                                                        </div>
+                                                    @endif
+                                                    <input type="file" class="form-control" name="{{ $s->namesetting }}">
                                                 @endif
                                                 @if ($errors->has($s->namesetting))
                                                     <span class="help-block">
@@ -71,5 +80,14 @@
 
 
 @section('scripts')
-
+    @if (Session::has('message'))
+        <script type="text/javascript">
+        swal({
+            title: "Success!",
+            text: "{{ Session::get('message') }}",
+            timer: 3000,
+            showConfirmButton: true
+        });
+        </script>
+    @endif
 @endsection

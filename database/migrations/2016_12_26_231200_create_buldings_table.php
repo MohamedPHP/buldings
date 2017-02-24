@@ -25,6 +25,7 @@ class CreateBuldingsTable extends Migration
             $table->string('meta');
             $table->string('langtude');
             $table->string('latitude');
+            $table->string('image');
             $table->text('larg_dis');
             $table->integer('status');
             $table->integer('place_id')->unsigned();

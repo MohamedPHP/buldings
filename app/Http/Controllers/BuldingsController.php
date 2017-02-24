@@ -40,6 +40,13 @@ class BuldingsController extends Controller
         $bu->meta       =   $request['meta'];
         $bu->langtude   =   $request['langtude'];
         $bu->latitude   =   $request['latitude'];
+        if ($request->hasFile('image')) {
+            if ($request->file('image')->isValid()) {
+                $bu->image   =   $this->upload($request['image']);
+            }
+        }else {
+            $bu->image = getString('no_image');
+        }
         $bu->larg_dis   =   $request['larg_dis'];
         $bu->status     =   $request['status'];
         $bu->place_id   =   $request['place_id'];
@@ -69,12 +76,32 @@ class BuldingsController extends Controller
         $bu->meta       =   $request['meta'];
         $bu->langtude   =   $request['langtude'];
         $bu->latitude   =   $request['latitude'];
+        if ($request->hasFile('image')) {
+            if ($request->file('image')->isValid()) {
+                if ($bu->image != getString('no_image')) {
+                    if ($bu->image != 'src/buldings/default.jpg') {
+                        unlink(public_path($bu->image));
+                    }
+                }
+                $bu->image   =   $this->upload($request['image']);
+            }
+        }
         $bu->larg_dis   =   $request['larg_dis'];
         $bu->status     =   $request['status'];
         $bu->place_id   =   $request['place_id'];
         $bu->save();
         return redirect()->back()->with(['message' => 'The Bulding Updated Successfully']);
     }
+
+    public function upload($file){
+        $extension = $file->getClientOriginalExtension();
+        $sha1 = sha1($file->getClientOriginalName());
+        $filename = date('Y-m-d-h-i-s')."_".$sha1.".".$extension;
+        $path = public_path('src/buldings/images');
+        $file->move($path, $filename);
+        return 'src/buldings/images/'.$filename;
+    }
+
 
     public function delete($id)
     {

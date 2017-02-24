@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="banner text-center">
+    <div class="banner text-center" style="background: url({{ asset(getString('slider_image')) }}) no-repeat center;">
     	<div class="container">
     		<div class="banner-info">
     			<h1>Welcome To {{ getString() }}</h1>

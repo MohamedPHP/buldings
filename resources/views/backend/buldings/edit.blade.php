@@ -33,7 +33,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <form method="post" action="{{ route('admin.buldings.update', ['id' => $bulding->id]) }}">
+                        <form method="post" action="{{ route('admin.buldings.update', ['id' => $bulding->id]) }}" enctype="multipart/form-data">
                             {{--
                                 `id`, `name`, `price`, `rooms`, `rent`, `square`,
                                 `type`, `small_dis`, `meta`, `langtude`, `latitude`,
@@ -201,6 +201,25 @@
                                         @if ($errors->has('larg_dis'))
                                             <span class="help-block">
                                                 <strong class="text-danger">{{ $errors->first('larg_dis') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    @if ($bulding->image != 'src/buldings/defualt.jpg')
+                                        @if ($bulding->image != 'src/buldings/images/no_image/no_image.jpg')
+                                            <div style="width:150px;height150px;">
+                                                <img src="{{ asset($bulding->image) }}" class="img-responsive img-thumbnail" alt="Image">
+                                            </div>
+                                        @endif
+                                    @endif
+                                    <div class="form-group">
+                                        <label for="image">image</label>
+                                        <input type="file" class="form-control" id="image" name="image">
+                                        @if ($errors->has('image'))
+                                            <span class="help-block">
+                                                <strong class="text-danger">{{ $errors->first('image') }}</strong>
                                             </span>
                                         @endif
                                     </div>

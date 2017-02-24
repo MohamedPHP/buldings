@@ -35,8 +35,10 @@ class BuldingsRequest extends Request
             'meta' => 'required',
             'langtude' => 'required',
             'latitude' => 'required',
+            'image' => 'mimes:png,jpg,jpeg',
             'larg_dis' => 'required|min:6',
             'status' => 'required|numeric',
+            'place_id' => 'required',
         ];
     }
 }

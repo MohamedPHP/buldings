@@ -59,7 +59,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-12" style="height: 300px">
-                        <img src="{{asset('frontend/images/bu_image.jpg')}}" class="img-responsive img-rounded img-thumbnail" style="width: 100%; height: 100%;">
+                        <img src="{{asset($bulding->image)}}" class="img-responsive img-rounded img-thumbnail" style="width: 100%; height: 100%;">
                     </div>
                 </div>
                 <hr>
